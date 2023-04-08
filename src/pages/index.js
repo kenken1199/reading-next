@@ -4,6 +4,7 @@ const ReadAllItems = (props) => {
   return (
     <div>
       <h1>こんにちは</h1>
+      <Link href={"item/create"}>アイテム作成</Link>
       {props.allItems.map((item) => (
         <Link href={`/item/${item._id}`} key={item._id}>
           <img src={item.image} />

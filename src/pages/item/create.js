@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const CreateItem = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [finished, setFinished] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +30,7 @@ const CreateItem = () => {
       console.log(error);
       alert("アイテム作成失敗");
     }
+    router.push("/");
   };
   return (
     <div>

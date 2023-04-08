@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const UpdateItem = (props) => {
   const [title, setTitle] = useState(props.singleItem.title);
   const [image, setImage] = useState(props.singleItem.image);
   const [description, setDescription] = useState(props.singleItem.description);
   const [finished, setFinished] = useState(props.singleItem.finished);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ const UpdateItem = (props) => {
       console.log(error);
       alert("アイテム編集失敗");
     }
+    router.push("/");
   };
   return (
     <div>
@@ -82,5 +85,9 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: singleItem,
+    // redirect: {
+    //   permanent: false,
+    //   destination: "/",
+    // },
   };
 };

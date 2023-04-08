@@ -1,4 +1,7 @@
+import { useRouter } from "next/router";
+
 const UpdateItem = (props) => {
+  const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -18,6 +21,7 @@ const UpdateItem = (props) => {
       console.log(error);
       alert("アイテム削除失敗");
     }
+    router.push("/");
   };
   return (
     <div>
