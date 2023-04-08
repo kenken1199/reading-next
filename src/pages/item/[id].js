@@ -19,7 +19,6 @@ const ReadSingleItem = (props) => {
           </Link>
         </div>
       </div>
-      <Link href={"/"}>ホームに戻る</Link>
     </div>
   );
 };
