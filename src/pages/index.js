@@ -3,15 +3,14 @@ import Link from "next/link";
 const ReadAllItems = (props) => {
   return (
     <div>
-      <h1>こんにちは</h1>
-      <Link href={"item/create"}>アイテム作成</Link>
+      <h1 className="text-center">全書籍</h1>
       {props.allItems.map((item) => (
         <Link href={`/item/${item._id}`} key={item._id}>
-          <img src={item.image} />
-          <h2>{item.price}</h2>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-          <p>{item.finished ? "true" : "false"}</p>
+          <div className="border-4 mt-6 text-center">
+            <h3>{item.title}</h3>
+            <img className="m-auto" src={item.image} />
+            <p>{item.finished ? "完了" : "未読"}</p>
+          </div>
         </Link>
       ))}
     </div>

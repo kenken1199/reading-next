@@ -30,8 +30,10 @@ const UpdateItem = (props) => {
         <h2>{props.singleItem.title}</h2>
         <img src={props.singleItem.image} />
         <p>{props.singleItem.description}</p>
-        <p>{props.singleItem.finished ? "true" : "false"}</p>
-        <button>削除</button>
+        <p>{props.singleItem.finished ? "完了" : "未読"}</p>
+        <button className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+          削除
+        </button>
       </form>
     </div>
   );
